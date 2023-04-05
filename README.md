@@ -118,6 +118,7 @@ De la misma manera Uds. deben definir los tipos de datos asociados a cada una de
 ```
 - Nombre
 - Apellido
+- DNI :red_circle:
 - Telefono
 - Direccion
 - FechaAlta
