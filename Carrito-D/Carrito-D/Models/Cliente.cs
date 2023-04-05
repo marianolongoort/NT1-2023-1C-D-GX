@@ -2,5 +2,6 @@
 {
     public class Cliente
     {
+        public List<Carrito> Carritos { get; set; }
     }
 }
