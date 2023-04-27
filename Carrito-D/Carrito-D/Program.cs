@@ -1,4 +1,7 @@
-namespace Carrito_D
+using Estacionamiento_D.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Estacionamiento_D
 {
     public class Program
     {
@@ -7,6 +10,9 @@ namespace Carrito_D
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<MiBaseDeDatos>(options => options.UseInMemoryDatabase("EstacionamientoDB") );
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

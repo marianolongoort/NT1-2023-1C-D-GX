@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Carrito_D": {
+    "Estacionamiento_D": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

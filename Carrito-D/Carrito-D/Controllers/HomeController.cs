@@ -1,32 +1,40 @@
-﻿using Carrito_D.Models;
+﻿using Estacionamiento_D.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Carrito_D.Controllers
+namespace Estacionamiento_D.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+    {       
+        public ActionResult Index(string nombre,string apellido)
         {
-            _logger = logger;
+            Persona persona = new Persona() { 
+                Apellido = apellido,
+                Nombre = nombre
+            };
+
+            ViewResult result = View(persona);
+
+            return result;
         }
 
-        public IActionResult Index()
+        private ActionResult Nombres(int? personaId,string nombre,string apellido = "No definido") 
+        {         
+            if(personaId == null)
+            {
+                return Content($"{nombre},{apellido}");
+            }
+            else
+            {
+                return Content($"{nombre},{apellido} y el numero es {personaId}");
+            }
+            
+        }
+
+        public ActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

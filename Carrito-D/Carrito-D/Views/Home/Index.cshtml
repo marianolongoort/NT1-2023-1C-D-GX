@@ -1,8 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Persona
+
+@{
+    ViewData["Title"] = "Home";
+    string texto = "Googleeeeee";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (false)
+{
+    <div class="text-center">
+        <h1 class="display-4">Bienvenidos</h1>
+        <p>Acceda a <a href="https://www.google.com.ar">@texto</a>.</p>
+    </div>
+}
+else
+{
+    <h1>El nombre pasado es @Model.Nombre</h1>
+}
+

@@ -1,7 +1,18 @@
-﻿namespace Carrito_D.Models
+﻿using Estacionamiento_D.Helpers;
+using System.ComponentModel.DataAnnotations;
+
+namespace Estacionamiento_D.Models
 {
-    public class Cliente
+    public class Cliente : Persona
     {
-        public List<Carrito> Carritos { get; set; }
+        [Required(ErrorMessage = ErrMsgs.Requerido)]
+        [Range(Restrictiones.FloorCUIL, Restrictiones.CeilCUIL, ErrorMessage = ErrMsgs.RangoMinMax)]
+        public long CUIT { get; set; }
+
+        public Direccion Direccion { get; set; }
+
+        //public List<ClienteVehiculo> VehiculosAutorizados { get; set; }
+
+
     }
 }

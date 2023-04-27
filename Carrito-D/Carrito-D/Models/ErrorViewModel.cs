@@ -1,4 +1,4 @@
-namespace Carrito_D.Models
+namespace Estacionamiento_D.Models
 {
     public class ErrorViewModel
     {
